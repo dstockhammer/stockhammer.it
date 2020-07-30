@@ -1,0 +1,109 @@
+// todo: this is a hackaround for the parcel bug that happens when importing
+// styles with fonts: https://github.com/parcel-bundler/parcel/issues/3170
+$fa-font-path: "./files";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~fontsource-league-gothic/latin-400-normal";
+@import "~fontsource-open-sans/latin-400-normal";
+@import "~normalize.css/normalize";
+
+$background-color: #1C1D26;
+$primary-color: #E44C65;
+$secondary-color: #00CBE9;
+$text-color: #EEE;
+$dimmed-text-color: #AAA;
+$width-threshold: 960px;
+
+body {
+  background: $background-color url("images/wood.jpg");
+  color: $dimmed-text-color;
+  font-family: "Open Sans", sans-serif;
+}
+
+.intro {
+  padding: 4em 1.5em 1.5em 1.5em;
+  text-align: right;
+  display: flex;
+  flex-flow: column;
+  min-height: 25em;
+
+  .image {
+    display: none;
+  }
+
+  .text {
+    order: 2;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    margin: 0.25em -0.75em;
+    padding: 0.15em 0.35em 0.05em 0.4em;
+    background: $primary-color;
+    color: #fff;
+    letter-spacing: 0.075em;
+    font-family: "League Gothic", sans-serif;
+  }
+
+  .location {
+    color: $text-color;
+    font-weight: bold;
+  }
+
+  .links {
+    padding-top: 1em;
+    font-size: 3em;
+  }
+
+  a {
+    transition: color .5s;
+
+    &:link, &:visited {
+      color: $text-color;
+    }
+
+    &:hover, &:active {
+      color: $secondary-color;
+    }
+  }
+}
+
+@media (min-width: $width-threshold) {
+  body {
+      overflow: hidden;
+  }
+
+  .intro {
+    padding: 0;
+    font-size: 1.5em;
+    position: absolute;
+    top: 35%;
+    right: 15%;
+    flex-flow: row;
+
+    h1 {
+      margin: 0.25em 0;
+    }
+
+    .image {
+      display: block;
+      order: 3;
+      margin: 0.5em 0 0 2em;
+      width: 220px;
+      height: 220px;
+      border-radius: 110px;
+      background: url("images/profile_220.png") no-repeat;
+      border: 2px solid $primary-color;
+    }
+
+    .links {
+      font-size: inherit;
+    }
+  }
+}

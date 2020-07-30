@@ -1,4 +1,3 @@
-bower_components/
-node_modules/
-wwwroot/lib/
-wwwroot/css/
+node_modules
+dist
+.cache

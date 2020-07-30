@@ -1,9 +1,20 @@
 {
   "name": "stockhammer.it",
-  "version": "1.0.0-alpha0",
+  "version": "1.0.0",
+  "author": "Daniel Stockhammer <daniel@stockhammer.it>",
+  "private": true,
+  "scripts": {
+    "build": "parcel build src/index.html --no-source-maps",
+    "dev": "parcel src/index.html --open"
+  },
   "devDependencies": {
-    "gulp": "3.9.0",
-    "gulp-rimraf": "0.1.1",
-    "gulp-sass": "2.0.4"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "fontsource-league-gothic": "^2.2.6",
+    "fontsource-open-sans": "^2.2.6",
+    "normalize.css": "^8.0.1"
   }
 }
